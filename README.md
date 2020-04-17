@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Worksheet: Building Basic and Nested Components
 
-## Available Scripts
+This worksheet contains prompts for several stateless React components. Practice building components that display information based on the `props` they are given, as well as building components that have other components nested within them.
 
-In the project directory, you can run:
+## Instructions
 
-### `npm start`
+For this worksheet practice, you should create a new React project with `create-react-app`. There is no need to setup a GitHub repo, as this will not be submitted to Ada.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Once the project has been created, make a new directory within the project called `src/components`. This is where you will create each new component's JavaScript and CSS files. It's totally fine to put all of these components into the same React project, even though they don't all interact with each other.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+There are two kinds of components in this practice worksheet: **basic** and **nested**:
 
-### `npm test`
+* Basic components receive `props` and return pure HTML that will be part of the page.
+* Nested components are very similar, except part of their function includes other React components.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this worksheet the nested components are built using the basic components -- for example the **ProductList** component is built with a list of **Product** components. As a result, you should work through all of the basic components first, and then tackle the nested components.
 
-### `npm run build`
+**NOTE**: The examples listed below are from real-world projects, and designers have worked on their visuals. You are **not** required to spend time on CSS to make your components look like the examples. The focus of this practice is entirely on building a React component which displays the data provided by `props` -- minimize the time you spend on CSS code that is not directly related to the functionality of a component function.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Basic Components
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Create an **Avatar** component which takes an image URL and presents that image with a border.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Examples:
+    ![Avatar component example](./images/example-component-avatar.png)
+1. Create a **Badge** component which takes a number and displays that number in a circle. Bonus: have the circle change color based on the value of the number (e.g. red if it's < 50, green otherwise).
 
-### `npm run eject`
+    Example (the badge is the part with the 88 or 888):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ![Badge component example](./images/example-component-badge.png)
+1. Create a **Product** component, which takes a name, a product photo URL, a standard price, and a discount price. If the discounted price is less than the standard price then the component should display the discounted price with some visual indicator (e.g. the price text is red).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Example:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ![Product component example](./images/example-component-product.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Nested Components
 
-## Learn More
+1. Create a **UserCard** component which takes a user object. The user object has properties for:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - User name
+    - Avatar image URL
+    - Rank - A role or title in the community represented by text e.g. Super Moderator
+    - Score
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    This component renders a rectangular “card” for the given user. The card itself has the name of the user and their rank, plus it includes an Avatar component (from above) for displaying their avatar image, and a Badge component for displaying their score.
+  
+    Example:
+    ![UserCard component example](./images/example-component-usercard.png)
 
-### Code Splitting
+1. Create a **ProductList** component which takes an array of product objects. Each product object has properties for:
+    - Product name
+    - Product image URL
+    - Price
+    - Discount price
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    This component renders a list of individual Product components (from above). The list display is up to you (e.g. with a single product per row, or multiple products per row).
