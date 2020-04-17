@@ -1,0 +1,20 @@
+.badge {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 50%;
+  background: rgb(0, 119, 255);
+  color: rgba(255, 255, 255, 0.952);
+  font-size: 15px;
+}
+
+.badgeHigh {
+  display: inline-block;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 50%;
+  background-color: rgb(243, 8, 8);
+  text-align: center;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.952);
+}

@@ -7,7 +7,7 @@ const AvatarList = (props) => {
   const userInfo = props.profilePics.map((pic) => {
     return (
       <Avatar
-      avatarUrl = {pic.imgUrl}
+      imgUrl = {pic.imgUrl}
       altText = {pic.altText}
       />
       );
